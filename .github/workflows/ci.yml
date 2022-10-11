@@ -24,13 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - run: docker-compose -f docker-compose-build.yml build --parallel
+      - run: docker tag udagram-frontend:v7 lijkal/udagram-frontend:v7
+      - run: docker tag udagram-api-user:v7 lijkal/udagram-api-user:v7
+      - run: docker tag udagram-api-feed:v7 lijkal/udagram-api-feed:v7
+      - run: docker tag udagram-reverseproxy:v7 lijkal/udagram-reverseproxy:v7
+      - run: docker push lijkal/udagram-frontend:v7
+      - run: docker push lijkal/udagram-api-user:v7
+      - run: docker push lijkal/udagram-api-feed:v7
+      - run: docker push lijkal/udagram-reverseproxy:v7
