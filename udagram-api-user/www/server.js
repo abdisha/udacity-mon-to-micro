@@ -24,13 +24,13 @@ const model_index_1 = require("./controllers/v0/model.index");
     yield sequelize_1.sequelize.addModels(model_index_1.V0_USER_MODELS);
     console.debug("Initialize database connection...");
     yield sequelize_1.sequelize.sync();
-    const app = express_1.default();
+    const app = (0, express_1.default)();
     const port = process.env.PORT || 8080;
     app.use(body_parser_1.default.json());
     // We set the CORS origin to * so that we don't need to
     // worry about the complexities of CORS this lesson. It's
     // something that will be covered in the next course.
-    app.use(cors_1.default({
+    app.use((0, cors_1.default)({
         allowedHeaders: [
             'Origin', 'X-Requested-With',
             'Content-Type', 'Accept',
