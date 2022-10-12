@@ -16,7 +16,7 @@ spec:
         - name: backend-feed
           image: lijkal/udagram-api-feed:v7
           ports:
-          - containerPort: 8080
+          - containerPort: 80
           resources:
             limits:
               cpu: 500m
