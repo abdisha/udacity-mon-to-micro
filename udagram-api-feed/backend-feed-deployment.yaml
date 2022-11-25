@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-feed
-          image: lijkal/udagram-api-feed:v7
+          image: lijkal/udagram-api-feed:v33
           ports:
           - containerPort: 80
           resources:
