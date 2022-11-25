@@ -1,4 +1,4 @@
-version: "99"
+version: "33"
 services:
   reverseproxy:
     image: udagram-reverseproxy:v33
