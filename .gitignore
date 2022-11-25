@@ -1,5 +1,6 @@
 *set_env.sh
-*env-secret.yaml
+*env-secrets.yaml
 *env-configmap.yaml
 *aws-secret.yaml
 *db_env.txt 
+*aws-creds-configmap.yaml

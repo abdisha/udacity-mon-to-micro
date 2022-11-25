@@ -2,21 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  labels:
+    app: frontend
 spec: 
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels: 
-      run: frontend
+      app: frontend
   template:
     metadata:
       labels: 
-        run: frontend
+        app: frontend
     spec:
       containers:
-      - name: frontend
-        image: lijkal/udagram-frontend:v33
-        ports:
-        - containerPort: 80
+        - name: frontend
+          image: lijkal/udagram-frontend:v34
+          ports:
+            - containerPort: 80
         # resources:
         #   limits:
         #     cpu: 200m

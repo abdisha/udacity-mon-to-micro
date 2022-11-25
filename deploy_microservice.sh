@@ -3,6 +3,7 @@ kubectl delete deploy backend-feed
 kubectl delete deploy reverseproxy
 kubectl delete deploy frontend
 
+
 kubectl apply -f udagram-api-feed/backend-feed-deployment.yaml
 kubectl apply -f udagram-api-user/backend-user-deployment.yaml
 kubectl apply -f udagram-frontend/frontend-deployment.yaml

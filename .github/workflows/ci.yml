@@ -25,12 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - run: docker-compose -f docker-compose-build.yaml build --parallel
-      - run: docker tag udagram-frontend:v33 lijkal/udagram-frontend:v33
+      - run: docker tag udagram-frontend:v34 lijkal/udagram-frontend:v34
       - run: docker tag udagram-api-user:v33 lijkal/udagram-api-user:v33
       - run: docker tag udagram-api-feed:v33 lijkal/udagram-api-feed:v33
       - run: docker tag udagram-reverseproxy:v33 lijkal/udagram-reverseproxy:v33
       - run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u "${{secrets.DOCKER_USERNAME}}" --password-stdin
-      - run: docker push lijkal/udagram-frontend:v33
+      - run: docker push lijkal/udagram-frontend:v34
       - run: docker push lijkal/udagram-api-user:v33
       - run: docker push lijkal/udagram-api-feed:v33
       - run: docker push lijkal/udagram-reverseproxy:v33

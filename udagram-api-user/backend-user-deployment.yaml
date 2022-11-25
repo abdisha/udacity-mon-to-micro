@@ -2,21 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-user
+  labels:
+    app: backend-user
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: backend-user
+      app: backend-user
   template:
     metadata:
       labels:
-        run: backend-user
+        app: backend-user
     spec:
       containers:
         - name: backend-user
           image: lijkal/udagram-api-user:v33
           ports:
-          - containerPort: 8080
+            - containerPort: 8080
           resources:
             limits:
               cpu: 500m
@@ -26,10 +28,8 @@ spec:
               memory: "100Mi"
           
           envFrom:
-            # Define the environment variable
             - configMapRef:
                     name: env-configmap
             - secretRef:
                     name: env-secret
-            - secretRef:
-                    name: aws-secret
+        
