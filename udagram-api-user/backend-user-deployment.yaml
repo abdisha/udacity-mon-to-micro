@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend-user
-          image: lijkal/udagram-api-user:v33
+          image: abdi123/udagram-api-user:v10
           ports:
             - containerPort: 8080
           resources:
