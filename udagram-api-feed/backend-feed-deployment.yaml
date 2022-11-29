@@ -31,12 +31,11 @@ spec:
                     name: env-configmap
             - secretRef:
                     name: env-secret
-            - secretRef:
-                    name: aws-secret
+            
           volumeMounts:
             - mountPath: "/root/.aws/"
-              name: aws-creds
+              name: aws-secret
       volumes:
-        - name: aws-creds
+        - name: aws-secret
           configMap:
-            name: aws-creds
+            name: aws-secret
